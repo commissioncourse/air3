@@ -118,121 +118,97 @@ function onEachFeature(feature, layer) {
         click: zoomToFeature
     });
 }
-var legend = L.control({position: 'bottomright'});
 
-	legend.onAdd = function (map) {
-
-		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [1, 5, 9, 14, 18, 22],
-			labels = [],
-			from, to;
-
-		for (var i = 0; i < grades.length; i++) {
-			from = grades[i];
-			to = grades[i + 1];
-
-			labels.push(
-				'<i style="background:' + getColor(from + 1) + '"></i> ' +
-				from + (to ? '&ndash;' + to : '+'));
-		}
-
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
-
-	legend.addTo(mymap);
-
-
-	function initialize_graph(callback) {
-		$.ajax({
-		dataType: "json",
-		url: "http://mreport.np6.com/geolocation/iris_40.geojson",
-		success: function(data) {
-			$(data.features).each(function(key, data) {
-			keySearch = data.properties.code_iris;
-				data2Add = totalHits.find(searchFeature)
-				data.properties['doc_count'] = data2Add ?  data2Add.doc_count: 0
-				statesData.features.push(data);
-				district_boundary.addData(data);
+	<!-- function initialize_graph(callback) { -->
+		<!-- $.ajax({ -->
+		<!-- dataType: "json", -->
+		<!-- url: "http://mreport.np6.com/geolocation/iris_40.geojson", -->
+		<!-- success: function(data) { -->
+			<!-- $(data.features).each(function(key, data) { -->
+			<!-- keySearch = data.properties.code_iris; -->
+				<!-- data2Add = totalHits.find(searchFeature) -->
+				<!-- data.properties['doc_count'] = data2Add ?  data2Add.doc_count: 0 -->
+				<!-- statesData.features.push(data); -->
+				<!-- district_boundary.addData(data); -->
 				
-			});
-			console.log('40')
-		}
-		}).error(function() {});
+			<!-- }); -->
+			<!-- console.log('40') -->
+		<!-- } -->
+		<!-- }).error(function() {}); -->
 
-		$.ajax({
-		dataType: "json",
-		url: "http://mreport.np6.com/geolocation/iris_33.geojson",
-		success: function(data) {
-			$(data.features).each(function(key, data) {
-			keySearch = data.properties.code_iris;
-				data2Add = totalHits.find(searchFeature)
-				data.properties['doc_count'] = data2Add ?  data2Add.doc_count: 0
-				statesData.features.push(data);
-				district_boundary.addData(data);
+		<!-- $.ajax({ -->
+		<!-- dataType: "json", -->
+		<!-- url: "http://mreport.np6.com/geolocation/iris_33.geojson", -->
+		<!-- success: function(data) { -->
+			<!-- $(data.features).each(function(key, data) { -->
+			<!-- keySearch = data.properties.code_iris; -->
+				<!-- data2Add = totalHits.find(searchFeature) -->
+				<!-- data.properties['doc_count'] = data2Add ?  data2Add.doc_count: 0 -->
+				<!-- statesData.features.push(data); -->
+				<!-- district_boundary.addData(data); -->
 				
-			});
-			console.log('40')
-		}
-		}).error(function() {});
+			<!-- }); -->
+			<!-- console.log('40') -->
+		<!-- } -->
+		<!-- }).error(function() {}); -->
 		
 		
 		
-		console.log("tttt");
-		callback(statesData);
-	}
-	var greenIcon = L.icon({
-    iconUrl: 'logo-mobile.svg',
-    //shadowUrl: 'leaf-shadow.png',
+		<!-- console.log("tttt"); -->
+		<!-- callback(statesData); -->
+	<!-- } -->
+	<!-- var greenIcon = L.icon({ -->
+    <!-- iconUrl: 'logo-mobile.svg', -->
+    <!-- //shadowUrl: 'leaf-shadow.png', -->
 
-    iconSize:     [38, 95], // size of the icon
+    <!-- iconSize:     [38, 95], // size of the icon -->
     
-});
-	L.marker([44.640106, -0.957756], {icon: greenIcon}).addTo(mymap);
-	L.marker([44.869576, -0.493545], {icon: greenIcon}).addTo(mymap);
+<!-- }); -->
+	<!-- L.marker([44.640106, -0.957756], {icon: greenIcon}).addTo(mymap); -->
+	<!-- L.marker([44.869576, -0.493545], {icon: greenIcon}).addTo(mymap); -->
 	
-	function searchFeature(feature)	{
-		return feature.key === keySearch
-	}
+	<!-- function searchFeature(feature)	{ -->
+		<!-- return feature.key === keySearch -->
+	<!-- } -->
 	
-	function get_hits_react(callback) {
-		vdata = '{"index":["mlphi_crm_0"],"ignore_unavailable":true,"preference":1516712423229}'
-		vdata += '\n' +'{"query":{"bool":{"must":[{"query_string":{"query":"*","analyze_wildcard":true}}],"must_not":[]}},"size":0,"_source":{"excludes":[]},"aggs":{"2":{"terms":{"field":"crm.string#geolocation_iris","size":56000,"order":{"_count":"desc"}}}}} \n'
+	<!-- function get_hits_react(callback) { -->
+		<!-- vdata = '{"index":["mlphi_crm_0"],"ignore_unavailable":true,"preference":1516712423229}' -->
+		<!-- vdata += '\n' +'{"query":{"bool":{"must":[{"query_string":{"query":"*","analyze_wildcard":true}}],"must_not":[]}},"size":0,"_source":{"excludes":[]},"aggs":{"2":{"terms":{"field":"crm.string#geolocation_iris","size":56000,"order":{"_count":"desc"}}}}} \n' -->
 		
-		$.ajax({
-			url: "http://poc-profiles-es-01.c.np6-cloud.internal:9200/mlphi_crm_0/_msearch",
-			dataType: "json",
-			type: "POST",
-			contentType: "application/x-ndjson",
-			data:  vdata                 
+		<!-- $.ajax({ -->
+			<!-- url: "http://poc-profiles-es-01.c.np6-cloud.internal:9200/mlphi_crm_0/_msearch", -->
+			<!-- dataType: "json", -->
+			<!-- type: "POST", -->
+			<!-- contentType: "application/x-ndjson", -->
+			<!-- data:  vdata                  -->
 				
 				
 
 
-			,
-			success: function (data) {
-				totalHits=data['responses'][0]['aggregations'][2]["buckets"];
-				result = totalHits.reduce((obj, item) => (obj[String(item.key)] = item.doc_count, obj) ,{});
-				console.log('ES')
-				addCount(result);
-				callback(data['responses'][0]['aggregations'][2]["buckets"]);
+			<!-- , -->
+			<!-- success: function (data) { -->
+				<!-- totalHits=data['responses'][0]['aggregations'][2]["buckets"]; -->
+				<!-- result = totalHits.reduce((obj, item) => (obj[String(item.key)] = item.doc_count, obj) ,{}); -->
+				<!-- console.log('ES') -->
+				<!-- addCount(result); -->
+				<!-- callback(data['responses'][0]['aggregations'][2]["buckets"]); -->
 				
 					
-			}
-		})
-	}
-var totalHits;
-var result;
-get_hits_react(function (totalHits){
-	initialize_graph(function (statesData){
-		L.geoJson(statesData).addTo(mymap);})
-	})
+			<!-- } -->
+		<!-- }) -->
+	<!-- } -->
+<!-- var totalHits; -->
+<!-- var result; -->
+<!-- get_hits_react(function (totalHits){ -->
+	<!-- initialize_graph(function (statesData){ -->
+		<!-- L.geoJson(statesData).addTo(mymap);}) -->
+	<!-- }) -->
 
-L.geoJson(statesData).addTo(mymap)
+<!-- L.geoJson(statesData).addTo(mymap) -->
 
-function addCount(totalHits){
-	console.log('aaa');
-}
+<!-- function addCount(totalHits){ -->
+	<!-- console.log('aaa'); -->
+<!-- } -->
 
  </script>
 </body>
