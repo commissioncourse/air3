@@ -1,0 +1,1 @@
+var course = {"type": "Feature","geometry": {    "type": "Point",    "coordinates": [44.640106, -0.957756]  },  "properties": {    "name": "Test"  }}
