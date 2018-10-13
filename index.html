@@ -1,9 +1,12 @@
 
+
 <html>
   <head>
   
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-   <script type="text/javascript" src="course.geojson"></script>
+   <script type="text/javascript" src="courses.geojson"></script>
+   <link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
+   <script src="js/leaflet.extra-markers.min.js"></script>
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -37,7 +40,8 @@
 	.legend { width: 100px; text-align: left; line-height: 18px; color: #555; } .legend i { width: 10px; height: 10px; float: left; margin-right: 8px; opacity: 0.7; }
    </style>
     <script type="text/javascript">
-	var someFeatures =[]
+	var someFeatures = course
+	console.log(someFeatures)
 	// Client ID and API key from the Developer Console
       	  var CLIENT_ID = '1051275653453-ovef2rtbnvpvvdusg2oobm1plh1fv557.apps.googleusercontent.com'
 	  var API_KEY = 'jAHECj-IvPZzGzx_c62CWjdt';
@@ -144,6 +148,7 @@
         });
       }
 /// PARTIE GEOLOCATION
+console.log(course)
  var mymap = L.map('mapid').setView([44.89090425391711, -0.5438232421875001], 8);
  var toner = L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
 	maxZoom: 18,
@@ -170,10 +175,11 @@ toner.addTo(mymap);
 L.geoJSON(someFeatures, {
 onEachFeature: onEachFeature,
     filter: function(feature, layer) {
+		console.log(feature.properties.Type)
 		
-        return feature.properties.show_on_map;
-    }
-}).addTo(mymap);
+        return true ;//feature.properties.show_on_map;
+    }}
+).addTo(mymap);
  
 var info = L.control();
 info.onAdd = function (map) {
@@ -181,10 +187,7 @@ info.onAdd = function (map) {
     this.update();
     return this._div;
 };
-info.update = function (props) {
-    this._div.innerHTML = '<h4>Aircubéens inscrits</h4><br>';
-};
-info.addTo(mymap);
+
 var keySearch;
 function style(feature) {
     
@@ -227,9 +230,14 @@ function zoomToFeature(e) {
     mymap.fitBounds(e.target.getBounds());
 }
 function onEachFeature(feature, layer) {
-		
-			popupContent = feature.properties.name + '<br>' + feature.properties.participant.length + " participants";
-		
+			p = feature.properties
+			popupContent = '<b>' + p.name + ' - '+ p.date +'</b>';
+			popupContent += '<br>Type de course :' + p.Type; 
+			popupContent += '<br>' +p.siteWeb + '<br>'+ 'Inscrits: ('+p.ListeInscrits.length +') ' + p.ListeInscrits;
+			popupContent += '<br>Distance :' + p.distance
+console.log(p.air3)			
+			if (p.air3 == true)
+				{popupContent += "<br> <img src='logo.jpg', style='width:50px'/>"}
 		layer.bindPopup(popupContent);
 	}
 ///
