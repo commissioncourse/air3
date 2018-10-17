@@ -58,7 +58,7 @@
 	</tr>
 	<tr>
 	
-	<td colspan=2><label id="info" >""
+	<td colspan=2><label id="info" >totot
 		</td>
 	</table>
 	<table>
@@ -104,9 +104,11 @@ toner.addTo(mymap);
 function filtre_air3(feature, valeur){
 	
 	if (valeur == "Tous"){return true;}
-	else {return feature.properties.air3;}
+	else if (String(feature.properties.air3) == valeur){return true;}
+	else return false
 	}
-function filtre_course(feature,valeur){
+function filtre_course(feature, valeur){
+	
 	if (type_course == "Tous"){return true;}
 	else if (feature.properties.Type == valeur){return true}
 	return false
@@ -136,7 +138,6 @@ function filtre_marker(){
 	
 	mois_course = document.getElementById("MoisCourse").value;
 	select_event = document.getElementById("Evm")	;
-	select_event = document.getElementById("Evm")	;
 	event = select_event.options[select_event.selectedIndex].value;
 	
 	L.geoJSON(someFeatures, {
@@ -144,6 +145,7 @@ function filtre_marker(){
 		filter: function(feature, layer) {
 			if (!filtre_course(feature, type_course)){return false}
 			if (!filtre_date(feature, mois_course)){return false}
+			
 			if (!filtre_air3(feature, event)){return false}
 			count +=1;
 			return true;
@@ -201,6 +203,7 @@ function add_marker(){
 			
 			if (!filtre_course(feature, type_course)){return false}
 			if (!filtre_date(feature, mois_course)){return false}
+			
 			if (!filtre_air3(feature, event)){return false}
 			count +=1;
 			
@@ -212,7 +215,7 @@ function add_marker(){
 	
 	if (count == 0)
 	{document.getElementById('info').innerHTML = "pas d'evenement pour ce mois"; }
-	else {document.getElementById('info').innerHTML = count + "évênement(s) pour ce mois"}
+	else {document.getElementById('info').innerHTML = count + " évênement(s) pour ce mois"}
 }
 add_marker();
 var info = L.control();
