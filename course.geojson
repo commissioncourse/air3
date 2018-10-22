@@ -10,8 +10,12 @@ var course = { "type": "FeatureCollection",
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-8.6919936,41.1621217]  },  "properties": {
 			"name": "Marathon de Porto", "Type": "Route", "distance":"15-42.2 km",  "date" : "04-11-2018", "ListeInscrits": ["Isabelle", "Karine", "Laure", "Philippe", "Raphaelle"], "siteWeb":"https://www.maratonadoporto.com/fr/" ,"air3":true	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-0.5703172, 44.8450682]   },  "properties": {
-			"name": "Challenge du Ruban Rose", "Type": "Route", "distance":"7 km",  "date" : "21-10-2018", "ListeInscrits": ["Elise"], "siteWeb":"http://challengedurubanrose.fr/index.php/bordeaux/" ,"air3":false	  }}
-					
-			
+			"name": "Challenge du Ruban Rose", "Type": "Route", "distance":"7 km",  "date" : "21-10-2018", "ListeInscrits": ["Elise"], "siteWeb":"http://challengedurubanrose.fr/index.php/bordeaux/" ,"air3":false	  }},
+		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.0725244, 44.5966933]   },  "properties": {
+			"name": "Foulées des plaines", "Type": "Route", "distance":"5-10 km",  "date" : "04-02-2019", "ListeInscrits": [], "siteWeb":"" ,"air3":true	  }},
+		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-0.2177668, 44.4340847]   },  "properties": {
+			"name": "Semi Bazas-Langon", "Type": "Route", "distance":"12-21.1 km",  "date" : "03-03-2019", "ListeInscrits": [], "siteWeb":"" ,"air3":true	  }},					
+		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [2.299388, 48.8683396]   },  "properties": {
+			"name": "Marathon de Paris", "Type": "Route", "distance":"42.2 km",  "date" : "14-04-2019", "ListeInscrits": ["Karine ", "Raphaelle " , "Florent "], "siteWeb":"https://www.schneiderelectricparismarathon.com/fr" ,"air3":true	  }}	
 ]}	
-		
+			
