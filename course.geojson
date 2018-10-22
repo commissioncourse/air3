@@ -18,4 +18,4 @@ var course = { "type": "FeatureCollection",
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [2.299388, 48.8683396]   },  "properties": {
 			"name": "Marathon de Paris", "Type": "Route", "distance":"42.2 km",  "date" : "14-04-2019", "ListeInscrits": ["Karine ", "Raphaelle " , "Florent "], "siteWeb":"https://www.schneiderelectricparismarathon.com/fr" ,"air3":true	  }}	
 ]}	
-			
+		
