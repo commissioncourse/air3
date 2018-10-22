@@ -16,6 +16,6 @@ var course = { "type": "FeatureCollection",
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-0.2177668, 44.4340847]   },  "properties": {
 			"name": "Semi Bazas-Langon", "Type": "Route", "distance":"12-21.1 km",  "date" : "03-03-2019", "ListeInscrits": [], "siteWeb":"" ,"air3":true	  }},					
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [2.299388, 48.8683396]   },  "properties": {
-			"name": "Marathon de Paris", "Type": "Route", "distance":"42.2 km",  "date" : "14-04-2019", "ListeInscrits": ["Karine ", "Raphaelle " , "Florent "], "siteWeb":"https://www.schneiderelectricparismarathon.com/fr" ,"air3":true	  }}	
+			"name": "Marathon de Paris ", "Type": "Route", "distance":"42.2 km",  "date" : "14-04-2019", "ListeInscrits": ["Karine ", "Raphaelle " , "Florent "], "siteWeb":"https://www.schneiderelectricparismarathon.com/fr" ,"air3":true	  }}	
 ]}	
 		
