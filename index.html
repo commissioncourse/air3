@@ -1,4 +1,5 @@
 
+
 <html>
   <head>
   
@@ -28,7 +29,7 @@
 	<tr>
 	<td>Evêmenent Air3</td>
 	<td>
-			<select name="Evm" id="Evm" onchange="filtre_marker(); " , size=1> 
+			<select name="Evm" id="Evm" onchange="filtre_marker();" , size=1> 
 				<option value="Tous" >Tous</option>
 				<option value=true>Oui</option>
 				<option value=false>Non</option>
@@ -50,10 +51,15 @@
 	<tr>
 	<td style="width:100px">Date</td>
 	<td>
-
+		
 		<input type="month" id="MoisCourse" name="start"
 	   min="2018-10" max="2019-10" value="2018-10" 
-	   onchange="filtre_marker();" />
+	   onchange="filtre_marker();" disabled=false />
+	</td>
+	
+	<td>Toutes
+		<input type="checkbox" id="scales" name="feature"
+               value="Toutes dates" checked  onchange="filtre_date_checked();";/>
 	</td>
 	</tr>
 	<tr>
@@ -64,7 +70,7 @@
 	<table>
 		
 		<td>
-			<div id="mapid" style="height: 500px;width:700px"></div>
+			<div id="mapid" style="height: 700px;width:700px"></div>
 		</td>
 	</table>
 <style>
@@ -77,7 +83,15 @@
 	
 
 /// PARTIE GEOLOCATION
-
+function filtre_date_checked(){
+	date_checked = document.getElementById('scales').checked;
+	<!-- alert(document.getElementById('scales').checked); -->
+	if (date_checked == true){
+		document.getElementById('MoisCourse').disabled=true;
+	}
+	else document.getElementById('MoisCourse').disabled=false;
+	filtre_marker();
+}
  var mymap = L.map('mapid').setView([44.89090425391711, -0.5438232421875001], 8);
  var toner = L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
 	maxZoom: 18,
@@ -116,7 +130,8 @@ function filtre_course(feature, valeur){
 function filtre_date(feature,valeur){
 	month = feature.properties.date.substr(3, 2)
 	year = feature.properties.date.substr(6, 4)
-	
+	date_checked = document.getElementById('scales').checked;
+	if (date_checked == true){return true};
 	if (valeur == (year + "-"+ month)){
 		return true
 	}
@@ -154,8 +169,8 @@ function filtre_marker(){
 	).addTo(mymap);
 	
 	if (count == 0)
-	{document.getElementById('info').innerHTML = "pas d'évênement pour ce mois"; }
-	else {document.getElementById('info').innerHTML = count + " évênement(s) pour ce mois"}
+	{document.getElementById('info').innerHTML = "pas d'evenement pour cette sélection"; }
+	else {document.getElementById('info').innerHTML = count + " évênement(s) pour cette sélection"}
 
 }
 function add_marker_type(type_course){
@@ -214,7 +229,7 @@ function add_marker(){
 	).addTo(mymap);
 	
 	if (count == 0)
-	{document.getElementById('info').innerHTML = "pas d'évênement pour ce mois"; }
+	{document.getElementById('info').innerHTML = "pas d'evenement pour cette sélection"; }
 	else {document.getElementById('info').innerHTML = count + " évênement(s) pour ce mois"}
 }
 add_marker();
