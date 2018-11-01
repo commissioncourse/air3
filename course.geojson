@@ -6,9 +6,9 @@ var course = { "type": "FeatureCollection",
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.2463926,44.4412825]  },  "properties": {
 			"name": "Biscatrail", "Type": "Trail", "distance":"18km - 32km",  "date" : "25-11-2018", "ListeInscrits": ["Catherine(?) ", "Cedric ", "Vincent ", "Tiphaine ", "Florian ", "Florent ", "JOB ", "Guillaume ", "François "], "siteWeb":"https://www.biscatrail.fr/" ,"air3":false	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [ -0.569051,44.841633]  },  "properties": {
-			"name": "10km des Quais de Bordeaux", "Type": "Route", "distance":"10km",  "date" : "11-11-2018", "ListeInscrits": ["Lola ","Kevin " ,"Alexandre " ,"Florent"], "siteWeb":"https://www.10kmdesquais.fr/" ,"air3":false	  }},
+			"name": "10km des Quais de Bordeaux", "Type": "Route", "distance":"10km",  "date" : "11-11-2018", "ListeInscrits": ["Lola ", "Livie ", "Kevin " ,"Alexandre " ,"Florent"], "siteWeb":"https://www.10kmdesquais.fr/" ,"air3":false	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-0.3789474,44.5335611]  },  "properties": {
-			"name": "Le Raisin d'or", "Type": "Trail", "distance":"9-14-25-35 km / Marche Nordique",  "date" : "03-11-2018", "ListeInscrits": ["Morgane ", "Angela "], 
+			"name": "Le Raisin d'or", "Type": "Trail", "distance":"9-14-25-35 km / Marche Nordique",  "date" : "03-11-2018", "ListeInscrits": ["Morgane ", "Angela ", "Christpohe "], 
 			"siteWeb":"http://www.baroudeursdusauternais.org/accueilraisindor.html","air3":false 	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-8.6919936,41.1621217]  },  "properties": {
 			"name": "Marathon de Porto", "Type": "Route", "distance":"15-42.2 km",  "date" : "04-11-2018", "ListeInscrits": ["Isabelle ", "Karine ", "Laure ", "Philippe ", "Raphaelle ", "Julien"], "siteWeb":"https://www.maratonadoporto.com/fr/" ,"air3":true	  }},
@@ -21,7 +21,11 @@ var course = { "type": "FeatureCollection",
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.6618253, 43.393006]   },  "properties": {
 			"name": "donibane-hondarribia (St Jean de Luz)", "Type": "Route", "distance":"21.1 km",  "date" : "28-10-2018", 
 			"ListeInscrits": ["Nathalie "], "siteWeb":"https://www.donibane-hondarribia.com/fr/le-parcour/21km-a-detalle/" ,
-			"air3":false	  }}					
+			"air3":false	  }},
+	    {"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.2066755, 44.6514231]   },  "properties": {
+			"name": "10km d'Arcachon", "Type": "Route", "distance":"10 km",  "date" : "02-12-2018", 
+			"ListeInscrits": ["Karine J "], "siteWeb":"https://www.10kmarcachon.fr/" ,
+			"air3":false	  }}
 			
     
     ]}	
