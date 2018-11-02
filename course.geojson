@@ -4,7 +4,9 @@ var course = { "type": "FeatureCollection",
 			"name": "Marathon de Paris ", "Type": "Route", "distance":"42.2 km",  "date" : "14-04-2019", "ListeInscrits": ["Karine ", "Raphaelle " , "Florent "], "siteWeb":"https://www.schneiderelectricparismarathon.com/fr" ,"air3":true	  }}	,
 
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.2463926,44.4412825]  },  "properties": {
-			"name": "Biscatrail", "Type": "Trail", "distance":"18km - 32km",  "date" : "25-11-2018", "ListeInscrits": ["Catherine(?) ", "Cedric ", "Vincent ", "Tiphaine ", "Florian ", "Florent ", "JOB ", "Guillaume ", "François "], "siteWeb":"https://www.biscatrail.fr/" ,"air3":false	  }},
+			"name": "Biscatrail", "Type": "Trail", "distance":"18km - 32km",  "date" : "25-11-2018", 
+			"ListeInscrits": ["Catherine(?) ", "Cedric ", "Vincent ", "Tiphaine ", "Florian ", "Florent ", "JOB ",
+					  "Guillaume ", "François ", "Alexandre "], "siteWeb":"https://www.biscatrail.fr/" ,"air3":false	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [ -0.569051,44.841633]  },  "properties": {
 			"name": "10km des Quais de Bordeaux", "Type": "Route", "distance":"10km",  "date" : "11-11-2018", "ListeInscrits": ["Lola ", "Livie ", "Kevin " ,"Alexandre " ,"Florent"], "siteWeb":"https://www.10kmdesquais.fr/" ,"air3":false	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-0.3789474,44.5335611]  },  "properties": {
@@ -24,7 +26,7 @@ var course = { "type": "FeatureCollection",
 			"air3":false	  }},
 	    {"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.2066755, 44.6514231]   },  "properties": {
 			"name": "10km d'Arcachon", "Type": "Route", "distance":"10 km",  "date" : "02-12-2018", 
-			"ListeInscrits": ["Karine J "], "siteWeb":"https://www.10kmarcachon.fr/" ,
+			"ListeInscrits": ["Karine J ", "Carole(?) "], "siteWeb":"https://www.10kmarcachon.fr/" ,
 			"air3":false	  }}
 			
     
