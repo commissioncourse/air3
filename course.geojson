@@ -26,7 +26,7 @@ var course = { "type": "FeatureCollection",
 			"air3":false	  }},
 	    {"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-1.2066755, 44.6514231]   },  "properties": {
 			"name": "10km d'Arcachon", "Type": "Route", "distance":"10 km",  "date" : "02-12-2018", 
-			"ListeInscrits": ["Karine J ", "Carole(?) "], "siteWeb":"https://www.10kmarcachon.fr/" ,
+			"ListeInscrits": ["Karine J ", "Carole(?) ", " Raphaelle", " Daniela", " Melissa"], "siteWeb":"https://www.10kmarcachon.fr/" ,
 			"air3":false	  }}
 			
     
