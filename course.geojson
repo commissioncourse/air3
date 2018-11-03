@@ -10,7 +10,8 @@ var course = { "type": "FeatureCollection",
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [ -0.569051,44.841633]  },  "properties": {
 			"name": "10km des Quais de Bordeaux", "Type": "Route", "distance":"10km",  "date" : "11-11-2018", "ListeInscrits": ["Lola ", "Livie ", "Kevin " ,"Alexandre " ,"Florent"], "siteWeb":"https://www.10kmdesquais.fr/" ,"air3":false	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-0.3789474,44.5335611]  },  "properties": {
-			"name": "Le Raisin d'or", "Type": "Trail", "distance":"9-14-25-35 km / Marche Nordique",  "date" : "03-11-2018", "ListeInscrits": ["Morgane ", "Angela ", "Christpohe "], 
+			"name": "Le Raisin d'or", "Type": "Trail", "distance":"9-14-25-35 km / Marche Nordique",  "date" : "03-11-2018", 
+			"ListeInscrits": ["Morgane ", "Angela ", "Christophe "], 
 			"siteWeb":"http://www.baroudeursdusauternais.org/accueilraisindor.html","air3":false 	  }},
 		{"type": "Feature","geometry": {    "type": "Point",    "coordinates": [-8.6919936,41.1621217]  },  "properties": {
 			"name": "Marathon de Porto", "Type": "Route", "distance":"15-42.2 km",  "date" : "04-11-2018", "ListeInscrits": ["Isabelle ", "Karine ", "Laure ", "Philippe ", "Raphaelle ", "Julien"], "siteWeb":"https://www.maratonadoporto.com/fr/" ,"air3":true	  }},
