@@ -90,6 +90,8 @@
        */
       function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
+	      //tests
+	updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get())
       }
 
       /**
