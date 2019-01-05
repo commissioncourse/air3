@@ -145,7 +145,10 @@
             for (i = 0; i < events.length; i++) {
               var event = events[i];
 		    if (event.summary.substr(0,8)=="[COURSE]"){
-			    L.marker([event.location]).addTo(mymap).bindPopup(create_popup_info(event));
+			    var location = event.location;
+			    var longi= parseFloat(arr[0]);
+			    var lat = parseFloat(arr[0]);
+			    L.marker([longi, lat]).addTo(mymap).bindPopup(create_popup_info(event));
 		    }
 			  if (event.summary == "BISCATRAIL"){
 				L.marker([44.4412825,-1.2463926]).addTo(mymap).bindPopup(create_popup_info(event));
