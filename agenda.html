@@ -178,7 +178,7 @@
 	function create_popup_info(this_event){
 		text = "<b>" + this_event.summary + "</b><br>"
 		text += "Date: " + this_event.start.dateTime.substring(0,10) + "<br>"
-		text += this_event.description.replace(/(\r\n|\n|\r)/g, '<br>'); + "<br>"
+		text += this_event.description.replace(/(\r\n|\n|\r)/g, '<br>') + "<br>"
 		text += "Participants: "
 		text +=	"<br>&nbsp;&nbsp;&nbsp;&nbsp - " + list_participant(this_event.attendees).join("<br>&nbsp;&nbsp;&nbsp;&nbsp - ")
 		return text
