@@ -49,7 +49,7 @@
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
-
+      var cpt_course = 0;
       /**
        *  On load, called to load the auth2 library and API client library.
        */
@@ -162,7 +162,8 @@
 			  
               //appendPre(event.summary + ' (' + when + ')')
             }
-          } else {
+          } 
+	if (cpt_course==0) {
             appendPre('No upcoming events found.');
           }
         });
