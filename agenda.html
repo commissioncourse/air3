@@ -145,7 +145,7 @@
             for (i = 0; i < events.length; i++) {
               var event = events[i];
 		    if (event.summary.substr(0,8)=="[COURSE]"){
-			    var location = event.location;
+			    var location = event.location.split(",");
 			    var longi= parseFloat(arr[0]);
 			    var lat = parseFloat(arr[0]);
 			    L.marker([longi, lat]).addTo(mymap).bindPopup(create_popup_info(event));
